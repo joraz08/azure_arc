@@ -1,0 +1,16 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'NNIT Cloud Global Team POC(67e3289f-ecc9-44ab-840b-20eb34d81fd6)'
+    subscriptionId: '67e3289f-ecc9-44ab-840b-20eb34d81fd6'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'JRRZ-Pipeline'
+    location: 'West Europe'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://github.com/joraz08/azure-quickstart-templates/blob/master/subscription-deployments/create-rg/azuredeploy.json'
+    deploymentMode: 'Complete'
